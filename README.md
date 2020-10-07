@@ -15,7 +15,7 @@ module "new_nat_rule" {
     fw_resource_group_name  = "CORE-FW-RG"
     nat_collection_name     = "WEB-APP-NAT"
     nat_collection_priority = "200"
-    nat_collection_action   = "DNAT"
+    nat_collection_action   = "Dnat"
 
     nat_rule {
         nat_rule_name         = "Publish-FRONTEND-WEBSVR"
@@ -23,8 +23,8 @@ module "new_nat_rule" {
         source_addresses      = ["145.23.23.23","10.0.0.0/8"]
         destination_ports     = ["4430"]
         destination_addresses = ["165.21.21.3"]
-        translated_port       = ["443"]
-        translated_address    = ["10.0.0.10"]
+        translated_port       = "443"
+        translated_address    = "10.0.0.10"
         protocols             = ["TCP"]
     }   
 }

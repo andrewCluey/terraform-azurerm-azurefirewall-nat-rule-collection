@@ -6,7 +6,7 @@ resource "azurerm_firewall_nat_rule_collection" "example" {
   action              = var.nat_collection_action
 
   dynamic "rule" {
-      foreach = var.nat_rule
+      for_each = var.nat_rule
       content {
           name                  = lookup(rule.value, "nat_rule_name", null)
           description           = lookup(rule.value, "description", null)
@@ -18,3 +18,4 @@ resource "azurerm_firewall_nat_rule_collection" "example" {
           protocols             = lookup(rule.value, "protocols", null)
       }
   }
+}
