@@ -26,8 +26,7 @@ module "new_nat_rule" {
         translated_port       = ["443"]
         translated_address    = ["10.0.0.10"]
         protocols             = ["TCP"]
-    }
-
+    }   
 }
           
 ```
