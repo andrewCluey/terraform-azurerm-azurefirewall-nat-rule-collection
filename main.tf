@@ -1,4 +1,4 @@
-resource "azurerm_firewall_nat_rule_collection" "example" {
+resource "azurerm_firewall_nat_rule_collection" "nat_rule" {
   name                = var.nat_collection_name
   azure_firewall_name = var.azure_fw_name
   resource_group_name = var.fw_resource_group_name
